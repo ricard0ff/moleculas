@@ -7,7 +7,7 @@ node() {
         stage('Run shell') {
             sh 'echo hello world'
         }
-	stage ("Install Application Dependencies") {
+        stage ("Install Application Dependencies") {
             sh 'pip install --upgrade ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} docker'
         }
         stage ("Executing Molecule lint") {
