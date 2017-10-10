@@ -4,7 +4,10 @@ node() {
             checkout scm
             sh 'git rev-parse HEAD > .git/commit-id'
         }
-        stage ("Install Application Dependencies") {
+        stage('Run shell') {
+            sh 'echo hello world'
+        }
+	stage ("Install Application Dependencies") {
             sh 'pip install --upgrade ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} docker'
         }
         stage ("Executing Molecule lint") {
