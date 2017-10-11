@@ -16,7 +16,7 @@ node() {
         stage ("Executing Molecule converge") {
             sh 'molecule converge'
         }
-        stage ("Executing Molecule idemotence") {
+        stage ("Executing Molecule idempotence") {
             sh 'molecule idempotence'
         }
         stage ("Executing Molecule verify") {
