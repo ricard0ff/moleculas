@@ -45,6 +45,7 @@ node() {
         }
     } catch(all) {
         currentBuild.result = "FAILURE"
+	System.out.println(all)
         throw all
     }
 }
