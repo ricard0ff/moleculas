@@ -4,9 +4,6 @@ node() {
             checkout scm
             sh 'git rev-parse HEAD > .git/commit-id'
         }
-	stage ("teste") {
-	    sh 'echo hello'
-        }
         stage ("Install Application Dependencies") {
             sh 'sudo pip install --upgrade ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} docker'
         }
@@ -19,7 +16,7 @@ node() {
         stage ("Executing Molecule converge") {
             sh 'molecule converge'
         }
-        stage ("Executing Molecule idempotence") {
+        stage ("Executing Molecule idemotence") {
             sh 'molecule idempotence'
         }
         stage ("Executing Molecule verify") {
@@ -51,4 +48,3 @@ node() {
         throw err
     }
 }
-
