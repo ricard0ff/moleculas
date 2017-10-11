@@ -5,7 +5,7 @@ node() {
             sh 'git rev-parse HEAD > .git/commit-id'
         }
         stage ("Install Application Dependencies") {
-            sh 'sudo pip install --upgrade ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} docker'
+            sh 'pip install --upgrade ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} docker'
         }
         stage ("Executing Molecule lint") {
             sh 'molecule lint'
